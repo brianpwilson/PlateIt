@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101002174019) do
+ActiveRecord::Schema.define(:version => 20101002203705) do
 
-  create_table "registers", :force => true do |t|
-    t.string  "name"
-    t.string  "password"
-    t.string  "plate"
-    t.string  "state"
-    t.integer "role"
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "hash_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

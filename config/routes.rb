@@ -1,7 +1,19 @@
-PlateIt::Application.routes.draw do
-  resources :registers
+PlateIt::Application.routes.draw do |map|
+  get "login/add_user"
+
+  get "login/login"
+
+  get "login/logout"
+
+  get "login/index"
+
+  get "login/delete_user"
+
+  get "login/list_users"
 
   get "home/index"
+  
+  map.connect '/login/add_user', :controller => 'login', :action => 'add_user'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,28 @@
+<div class="depot-form">
+  
+  <%= error_messages_for 'user'%>
+  
+  <fieldset>
+    <legend>Add user</legend>
+    
+    <%= form_for :user do |form| %>
+      <p>
+        <label for="user_name">Name:</label>
+        <%= form.text_field :name%>
+      </p>
+      
+      <p>
+        <label for="user_password">Password:</label>
+        <%= form.password_field :password%>
+      </p>
+      
+      <p>
+        <label for="user_password_confirmation">Confirm password:</label>
+        <%= form.password_field :password_confirmation%>
+      </p>
+      
+      <%= submit_tag "Add user", :class => "submit"%>
+    <% end %>
+  </fieldset>
+  
+</div>
