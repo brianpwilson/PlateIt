@@ -1,0 +1,15 @@
+<h1>All plates</h1>
+<ul>
+  <% for plate in @plates%>
+    <p>
+      <li>
+        <%= h(plate.state)%>
+      </li>
+      <li>
+        <%= h(plate.plateId)%>
+      </li>
+    </p>
+  
+  <% end%>  
+  
+</ul>

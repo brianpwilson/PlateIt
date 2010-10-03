@@ -2,6 +2,8 @@ PlateIt::Application.routes.draw do |map|
   get "post/post"
 
   get "post/all_posts"
+  
+  get "post/all_plates"
 
   get "post/posts_by_plate"
 
@@ -28,6 +30,8 @@ PlateIt::Application.routes.draw do |map|
   map.connect '/login/login', :controller => 'login', :action => 'index'
   
   map.connect '/login/add_user', :controller => 'login', :action => 'add_user'
+  
+  map.connect '/post/post', :controller => 'post', :action => 'post'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

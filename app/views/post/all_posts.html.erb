@@ -1,2 +1,18 @@
-<h1>Post#all_posts</h1>
-<p>Find me in app/views/post/all_posts.html.erb</p>
+<h1>All posts</h1>
+<ul>
+  <% for post in @posts%>
+    <p>
+      <li>
+        <%= h(Plate.find_by_id(post.plate).plateId)%>
+      </li>
+      <li>
+        <%= h(User.find_by_id(post.from).name)%>
+      </li>
+      <li>
+        <%= h(post.message)%>
+      </li>
+    </p>
+  
+  <% end%>  
+  
+</ul>

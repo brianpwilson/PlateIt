@@ -1,2 +1,29 @@
-<h1>Post#post</h1>
-<p>Find me in app/views/post/post.html.erb</p>
+<h1>PlateIt</h1>
+<div class="depot-form">
+  
+  <%= error_messages_for 'post'%>
+  
+  <fieldset>
+    <legend>Post a message for a license plate</legend>
+    
+    <%= form_for :post do |form| %>
+      <p>
+        <label for="id">Plate id:</label>
+        <%= form.text_field :plateId%>
+      </p>
+      
+      <p>
+        <label for="state">State:</label>
+        <%= form.text_field :state%>
+      </p>
+      
+      <p>
+        <label for="message">Message:</label>
+        <%= form.text_field :message%>
+      </p>
+      
+      <%= submit_tag "PlateIt", :class => "submit"%>
+    <% end %>
+  </fieldset>
+  
+</div>

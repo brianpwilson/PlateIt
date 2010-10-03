@@ -1,5 +1,7 @@
 class LoginController < ApplicationController
   
+  before_filter :authorize, :except => [:login, :add_user]
+  
   def add_user
     @user = User.new(params[:user])
     if( request.post? and @user.save )
@@ -11,7 +13,6 @@ class LoginController < ApplicationController
   end
 
   def login
-    puts "here"
     session[:user_id] = nil
     if( request.post? )
       user = User.authenticate(params[:name], params[:password])
