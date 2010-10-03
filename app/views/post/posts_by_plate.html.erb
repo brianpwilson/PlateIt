@@ -1,2 +1,28 @@
-<h1>Post#posts_by_plate</h1>
-<p>Find me in app/views/post/posts_by_plate.html.erb</p>
+<h1>Posts by plate</h1>
+<table>
+<tr>
+  <td><strong>State</strong></td>
+  <td><strong>Plate id</strong></td>
+  <td><strong>User</strong></td>
+  <td><strong>Message</strong></td>
+</tr>
+  
+  <% for post in @posts%>
+    <tr>
+      <td>
+        <%= h(Plate.find_by_id(post.plate).state)%>
+      </td>
+      <td>
+        <%= h(Plate.find_by_id(post.plate).plateId)%>
+      </td>
+      <td>
+        <%= h(User.find_by_id(post.from).name)%>
+      </td>
+      <td>
+        <%= h(post.message)%>
+      </td>
+    </tr>
+  
+  <% end%>  
+  
+</table>

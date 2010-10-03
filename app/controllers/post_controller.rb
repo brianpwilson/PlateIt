@@ -31,9 +31,13 @@ class PostController < ApplicationController
   end
   
   def posts_by_plate
+    @plate = Plate.find( :first, :conditions => { :plateId => params[:post]["plateId"],
+                                                  :state => params[:post]["state"] } )
+    @posts = Post.find( :all, :conditions => { :plate => @plate.id } )
   end
 
   def posts_by_user
+    @user = User.find_by_id(session[:user_id])
     @posts = Post.find( :all, :conditions => { :from => session[:user_id] } )
   end
 

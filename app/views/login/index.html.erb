@@ -1,8 +1,19 @@
 <h1>Welcome to PlateIt</h1>
 
-<%= link_to "Post", :controller => 'post', :action => 'post' %> 
+<h2><%= link_to "Post a new message for a plate", :controller => 'post', :action => 'post' %></h2>
 
-<h3>Last 5 posts</h3>
+<h3>Search for posts by plate</h3>
+<%= form_for :post, :url => { :action => "posts_by_plate", :controller => "post" } do |form| %>
+  <label for="plateId">Plate id:</label>
+  <%= form.text_field :plateId%>
+  
+  <label for="state">State:</label>
+  <%= form.text_field :state%>
+  
+  <%= submit_tag "Search", :class => "submit"%>
+<% end %>
+
+<h3>Last 5 posts <%=link_to "All", :controller => 'post', :action => 'posts_by_user' %></h3>
 <table>
 <tr>
   <td><strong>State</strong></td>

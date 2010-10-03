@@ -32,6 +32,8 @@ PlateIt::Application.routes.draw do |map|
   map.connect '/login/add_user', :controller => 'login', :action => 'add_user'
   
   map.connect '/post/post', :controller => 'post', :action => 'post'
+  
+  map.connect '/post/posts_by_plate', :controller => 'post', :action => 'posts_by_plate'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
