@@ -3,6 +3,9 @@
   <% for post in @posts%>
     <p>
       <li>
+        <%= h(Plate.find_by_id(post.plate).state)%>
+      </li>
+      <li>
         <%= h(Plate.find_by_id(post.plate).plateId)%>
       </li>
       <li>

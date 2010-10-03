@@ -1,2 +1,15 @@
-<h1>Post#posts_by_user</h1>
-<p>Find me in app/views/post/posts_by_user.html.erb</p>
+<h1>Posts for user</h1>
+<ul>
+  <% for post in @posts%>
+    <p>
+      <li>
+        <%= h(Plate.find_by_id(post.plate).plateId)%>
+      </li>
+      <li>
+        <%= h(post.message)%>
+      </li>
+    </p>
+  
+  <% end%>  
+  
+</ul>

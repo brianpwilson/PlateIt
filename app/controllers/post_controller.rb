@@ -7,8 +7,8 @@ class PostController < ApplicationController
       plate = Plate.new(:plateId => @post.plateId, :state => @post.state)
       if( !plate.does_it_exist? )
         plate.save
-        plate = plate.find_plate
       end
+      plate = plate.find_plate
       
       @post.plate = plate.id
       @post.from = session[:user_id]
@@ -34,6 +34,7 @@ class PostController < ApplicationController
   end
 
   def posts_by_user
+    # @posts = Plate.find( :first, :conditions => { :state => [state], :plateId =>[plateId] } )
   end
 
   def followed_posts
