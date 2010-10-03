@@ -13,6 +13,10 @@ PlateIt::Application.routes.draw do |map|
 
   get "home/index"
   
+  map.connect '/home/index', :controller => 'login', :action => 'login'
+
+  map.connect '/login/login', :controller => 'login', :action => 'index'
+  
   map.connect '/login/add_user', :controller => 'login', :action => 'add_user'
 
   # The priority is based upon order of creation:

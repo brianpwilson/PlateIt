@@ -1,2 +1,21 @@
 <h1>PlateIt</h1>
+<div class="depost-form">
+  <fieldset>
+    <legend>Log in</legend>
+    <%= form_tag do%>
+      <p>
+        <label for="name">Username:</label>
+        <%= text_field_tag :name, params[:name]%>
+      </p>
+      <p>
+        <label for="name">Password:</label>
+        <%= password_field_tag :password, params[:password]%>
+      </p>
+      
+      <p>
+        <%= submit_tag "Login", :controller => 'login', :action => 'login'%>
+      </p>
+    <% end %>
+  </fieldset>
+</div>
 <%= link_to "Register", :controller => 'login', :action => 'add_user' %> 

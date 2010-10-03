@@ -25,14 +25,14 @@ class User < ActiveRecord::Base
   def self.authenticate( name, password )
     user_to_find = self.find_by_name( name )
     
-    if( user )
-      expected_pass = encrypt_password( password, user.salt )
-      if( user.hash_password != expected_pass )
-        user = nil
+    if( user_to_find )
+      expected_pass = encrypt_password( password, user_to_find.salt )
+      if( user_to_find.hash_password != expected_pass )
+        user_to_find = nil
       end
     end
     
-    return user
+    return user_to_find
   end
   
   private
