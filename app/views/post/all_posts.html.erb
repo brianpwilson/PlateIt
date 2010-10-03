@@ -1,21 +1,28 @@
 <h1>All posts</h1>
-<ul>
+<table>
+<tr>
+  <td><strong>State</strong></td>
+  <td><strong>Plate id</strong></td>
+  <td><strong>User</strong></td>
+  <td><strong>Message</strong></td>
+</tr>
+  
   <% for post in @posts%>
-    <p>
-      <li>
+    <tr>
+      <td>
         <%= h(Plate.find_by_id(post.plate).state)%>
-      </li>
-      <li>
+      </td>
+      <td>
         <%= h(Plate.find_by_id(post.plate).plateId)%>
-      </li>
-      <li>
+      </td>
+      <td>
         <%= h(User.find_by_id(post.from).name)%>
-      </li>
-      <li>
+      </td>
+      <td>
         <%= h(post.message)%>
-      </li>
-    </p>
+      </td>
+    </tr>
   
   <% end%>  
   
-</ul>
+</table>

@@ -34,7 +34,7 @@ class PostController < ApplicationController
   end
 
   def posts_by_user
-    # @posts = Plate.find( :first, :conditions => { :state => [state], :plateId =>[plateId] } )
+    @posts = Post.find( :all, :conditions => { :from => session[:user_id] } )
   end
 
   def followed_posts

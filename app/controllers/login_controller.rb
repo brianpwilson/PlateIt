@@ -30,6 +30,8 @@ class LoginController < ApplicationController
   end
 
   def index
+    @posts = Post.find( :all, :conditions => { :from => session[:user_id] }, 
+      :order => "id desc", :limit => 5 )
   end
 
   def delete_user

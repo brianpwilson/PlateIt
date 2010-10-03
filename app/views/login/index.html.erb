@@ -1,3 +1,28 @@
 <h1>Welcome to PlateIt</h1>
 
 <%= link_to "Post", :controller => 'post', :action => 'post' %> 
+
+<h3>Last 5 posts</h3>
+<table>
+<tr>
+  <td><strong>State</strong></td>
+  <td><strong>Plate id</strong></td>
+  <td><strong>Message</strong></td>
+</tr>
+  
+  <% for post in @posts%>
+    <tr>
+      <td>
+        <%= h(Plate.find_by_id(post.plate).state)%>
+      </td>
+      <td>
+        <%= h(Plate.find_by_id(post.plate).plateId)%>
+      </td>
+      <td>
+        <%= h(post.message)%>
+      </td>
+    </tr>
+  
+  <% end%>  
+  
+</table>
