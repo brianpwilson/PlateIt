@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  plate: 1
+  from: 1
+  message: MyString
+
+two:
+  plate: 1
+  from: 1
+  message: MyString

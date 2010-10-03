@@ -1,4 +1,14 @@
 PlateIt::Application.routes.draw do |map|
+  get "post/post"
+
+  get "post/all_posts"
+
+  get "post/posts_by_plate"
+
+  get "post/posts_by_user"
+
+  get "post/followed_posts"
+
   get "login/add_user"
 
   get "login/login"
